@@ -133,7 +133,7 @@ class WickedPdf
   end
 
   def parse_options(options)
-    [
+    r = [
       parse_extra(options),
       parse_others(options),
       parse_global(options),
@@ -145,6 +145,8 @@ class WickedPdf
       parse_toc(options.delete(:toc)),
       parse_basic_auth(options)
     ].flatten
+    puts "OPTIONS: #{r.inspect}"
+    r
   end
 
   def parse_extra(options)
